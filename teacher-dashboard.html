@@ -5,23 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Öğretmen Paneli - EduPlatform</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-brand">Ana Sayfa</a>
-      <button class="btn-primary" onclick="logout()">Çıkış Yap</button>
+      <div class="nav-brand">
+        <h2><i class="fas fa-chalkboard-teacher"></i> Öğretmen Paneli</h2>
+      </div>
+      <div class="nav-menu">
+        <button class="btn-primary" onclick="window.location.href='content-upload.html'">
+          <i class="fas fa-upload"></i> İçerik Yükle
+        </button>
+        <button class="btn-secondary" onclick="logout()">
+          <i class="fas fa-sign-out-alt"></i> Çıkış Yap
+        </button>
+      </div>
     </div>
   </nav>
 
   <section class="dashboard">
-    <h1>Öğretmen Paneli</h1>
-    <p>Buradan içeriklerinizi yönetebilirsiniz.</p>
-  
-    <!-- İçerik Yükleme Butonu -->
-    <div class="nav-menu">
-      <button class="btn-primary" onclick="window.location.href='content-upload.html'">İçerik Yükle</button>
-    </div>
+    <h1>Hoşgeldiniz, Öğretmen!</h1>
+    <p>Buradan ders materyallerini yönetebilir, öğrencilerinizi takip edebilir ve rapor oluşturabilirsiniz.</p>
+    
+    <!-- Öğrenci Raporları Bölümü -->
+    <section class="reports-section">
+      <h2>Öğrenci Raporları</h2>
+      <table class="reports-table">
+        <thead>
+          <tr>
+            <th>Öğrenci Adı</th>
+            <th>Ders</th>
+            <th>Not</th>
+            <th>Aksiyon</th>
+          </tr>
+        </thead>
+        <tbody id="reportsTableBody">
+          <!-- Javascript ile Öğrenci Verileri Buraya Yüklenecek -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- İletişim Formu Bölümü -->
+    <section class="contact-section">
+      <h2>İletişim Formu</h2>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="studentEmail">Öğrenci E-posta</label>
+          <input type="email" id="studentEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Mesaj</label>
+          <textarea id="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Gönder</button>
+      </form>
+      <div id="contactMessage"></div>
+    </section>
   </section>
 
   <footer class="footer">
@@ -30,6 +70,6 @@
 
   <script src="supabaseClient.js"></script>
   <script src="auth.js"></script>
-  <script src="script.js"></script>
+  <script src="teacher-dashboard.js"></script>
 </body>
 </html>

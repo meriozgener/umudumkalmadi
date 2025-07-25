@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -6,208 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Öğretmen Paneli - EduPlatform</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="nav-brand">
-        <h2><i class="fas fa-graduation-cap"></i> EduPlatform</h2>
-      </div>
-      <div class="nav-menu">
-        <span class="user-info">
-          <i class="fas fa-chalkboard-teacher"></i> Öğretmen Paneli
-        </span>
-        <button class="btn-primary" onclick="logout()">
-          <i class="fas fa-sign-out-alt"></i> Çıkış
-        </button>
-      </div>
+      <a href="index.html" class="nav-brand">Ana Sayfa</a>
+      <button class="btn-primary" onclick="logout()">Çıkış Yap</button>
     </div>
   </nav>
 
-  <!-- Dashboard Header -->
-  <section class="dashboard-header">
-    <div class="container">
-      <h1><i class="fas fa-tachometer-alt"></i> Öğretmen Paneli</h1>
-      <p>Sınıflarınızı yönetin, içerik oluşturun ve öğrenci performansını takip edin.</p>
+  <section class="dashboard">
+    <h1>Öğretmen Paneli</h1>
+    <p>Buradan içeriklerinizi yönetebilirsiniz.</p>
+  
+    <!-- İçerik Yükleme Butonu -->
+    <div class="nav-menu">
+      <button class="btn-primary" onclick="window.location.href='content-upload.html'">İçerik Yükle</button>
     </div>
   </section>
 
-  <!-- Quick Stats -->
-  <section class="quick-stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-icon">
-            <i class="fas fa-users"></i>
-          </div>
-          <div class="stat-info">
-            <h3>124</h3>
-            <p>Toplam Öğrenci</p>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">
-            <i class="fas fa-chalkboard"></i>
-          </div>
-          <div class="stat-info">
-            <h3>6</h3>
-            <p>Aktif Sınıf</p>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">
-            <i class="fas fa-file-alt"></i>
-          </div>
-          <div class="stat-info">
-            <h3>32</h3>
-            <p>Yüklenen İçerik</p>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">
-            <i class="fas fa-chart-bar"></i>
-          </div>
-          <div class="stat-info">
-            <h3>78%</h3>
-            <p>Ortalama Başarı</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <footer class="footer">
+    <p>&copy; 2024 EduPlatform. Tüm hakları saklıdır.</p>
+  </footer>
 
-  <!-- Main Content -->
-  <section class="main-content">
-    <div class="container">
-      <div class="content-grid">
-        <!-- My Classes -->
-        <div class="content-section">
-          <h2><i class="fas fa-chalkboard"></i> Sınıflarım</h2>
-          <div class="class-list">
-            <div class="class-card">
-              <div class="class-header">
-                <h3>11-A Türk Dili ve Edebiyatı</h3>
-                <span class="student-count">28 öğrenci</span>
-              </div>
-              <div class="class-stats">
-                <div class="stat">
-                  <span class="label">Son Test Ortalaması:</span>
-                  <span class="value success">82</span>
-                </div>
-                <div class="stat">
-                  <span class="label">Aktif Öğrenci:</span>
-                  <span class="value">25/28</span>
-                </div>
-              </div>
-              <div class="class-actions">
-                <button class="btn-primary btn-small">Sınıfı Yönet</button>
-                <button class="btn-outline btn-small">İstatistikler</button>
-              </div>
-            </div>
-
-            <div class="class-card">
-              <div class="class-header">
-                <h3>10-B Türkçe</h3>
-                <span class="student-count">26 öğrenci</span>
-              </div>
-              <div class="class-stats">
-                <div class="stat">
-                  <span class="label">Son Test Ortalaması:</span>
-                  <span class="value warning">74</span>
-                </div>
-                <div class="stat">
-                  <span class="label">Aktif Öğrenci:</span>
-                  <span class="value">24/26</span>
-                </div>
-              </div>
-              <div class="class-actions">
-                <button class="btn-primary btn-small">Sınıfı Yönet</button>
-                <button class="btn-outline btn-small">İstatistikler</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Recent Activities -->
-        <div class="content-section">
-          <h2><i class="fas fa-clock"></i> Son Aktiviteler</h2>
-          <div class="activity-list">
-            <div class="activity-item">
-              <div class="activity-icon">
-                <i class="fas fa-upload"></i>
-              </div>
-              <div class="activity-info">
-                <h4>Yeni PDF yüklendi</h4>
-                <p>Divan Edebiyatı - 11-A sınıfı</p>
-                <small>2 saat önce</small>
-              </div>
-            </div>
-            
-            <div class="activity-item">
-              <div class="activity-icon">
-                <i class="fas fa-quiz"></i>
-              </div>
-              <div class="activity-info">
-                <h4>Test oluşturuldu</h4>
-                <p>Anlam Bilgisi - 15 soru</p>
-                <small>5 saat önce</small>
-              </div>
-            </div>
-            
-            <div class="activity-item">
-              <div class="activity-icon">
-                <i class="fas fa-book"></i>
-              </div>
-              <div class="activity-info">
-                <h4>Edebi metin analizi</h4>
-                <p>10-B sınıfı - Nazim Hikmet</p>
-                <small>1 gün önce</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quick Actions -->
-  <section class="quick-actions">
-    <div class="container">
-      <h2>Hızlı İşlemler</h2>
-      <div class="actions-grid">
-        <button class="action-card">
-          <i class="fas fa-upload"></i>
-          <h3>İçerik Yükle</h3>
-          <p>PDF, video veya doküman ekle</p>
-        </button>
-        
-        <button class="action-card">
-          <i class="fas fa-plus"></i>
-          <h3>Test Oluştur</h3>
-          <p>Yeni bir test hazırla</p>
-        </button>
-        
-        <button class="action-card">
-          <i class="fas fa-book-reader"></i>
-          <h3>Edebi Metin</h3>
-          <p>Yeni edebi metin ekle</p>
-        </button>
-        
-        <button class="action-card">
-          <i class="fas fa-analytics"></i>
-          <h3>Analiz Görüntüle</h3>
-          <p>Öğrenci performansını incele</p>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Supabase Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script src="supabaseClient.js"></script>
   <script src="auth.js"></script>
-  <script src="teacher-dashboard.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

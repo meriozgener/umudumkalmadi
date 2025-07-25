@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İçerik Yükle - EduPlatform</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="teacher-dashboard.html" class="nav-brand">Öğretmen Paneli</a>
+      <button class="btn-primary" onclick="logout()">Çıkış Yap</button>
+    </div>
+  </nav>
+
+  <section class="content-upload">
+    <h1>İçerik Yükle</h1>
+    <form id="uploadForm">
+      <div class="form-group">
+        <label for="contentTitle">İçerik Başlığı</label>
+        <input type="text" id="contentTitle" required>
+      </div>
+      <div class="form-group">
+        <label for="contentFile">Dosya Yükle</label>
+        <input type="file" id="contentFile" required>
+      </div>
+      <button type="submit" class="btn-primary">Yükle</button>
+    </form>
+    <div id="uploadMessage"></div>
+  </section>
+
+  <script src="content-upload.js"></script>
+</body>
+</html>
